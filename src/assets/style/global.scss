@@ -6,14 +6,45 @@
   padding: 0;
   box-sizing: border-box;
 }
-.nav{
+
+.nav {
   height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 99999;
+  background-color: #ffffffa1;
 }
-.bg-cover{
-  @apply w-full;
-  height:calc(100vh - 50px) ;
-  background-image: url("../images/wwdc22-hero-large-b.jpg");
-  background-size: 2560px 900px;
-  background-repeat: no-repeat;
-  background-position: center 0;
+
+.main-image {
+  padding-top: 50px !important;
+
+  .bg-cover {
+    @apply w-full;
+    height: 100vh;
+    background-image: url("../images/wwdc22-hero-large-b.jpg");
+    background-size: 2560px 900px;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    @media only screen and (max-width: 768px) {
+      background-size: cover;
+    }
+
+    .subhead {
+      @apply text-gray-100 text-center text-2xl;
+    }
+
+    .hero-masthead {
+      width: 285px;
+    }
+  }
+}
+.box-section{
+  @apply flex justify-between items-center;
+  .box{
+    @apply w-1/2;
+    img{
+      height: 350px;
+      @apply w-auto;
+    }
+  }
 }

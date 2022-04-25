@@ -1,5 +1,5 @@
 <template>
-  <landingPage msg="Welcome to Your Vue.js App"/>
+  <landingPage/>
 </template>
 
 <script>
