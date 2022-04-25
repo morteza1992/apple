@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.nav{
+  height: 50px;
+}
+.bg-cover{
+  @apply w-full;
+  height:calc(100vh - 50px) ;
+  background-image: url("../images/wwdc22-hero-large-b.jpg");
+  background-size: 2560px 900px;
+  background-repeat: no-repeat;
+  background-position: center 0;
+}
