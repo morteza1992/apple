@@ -11,7 +11,7 @@
   height: 50px;
   width: 100%;
   position: fixed;
-  z-index: 99999;
+  z-index: 9999999;
   background-color: #ffffffa1;
 }
 
@@ -20,7 +20,7 @@
 
   .bg-cover {
     @apply w-full;
-    height: 100vh;
+    height: calc(100vh + 50px);
     background-image: url("../images/wwdc22-hero-large-b.jpg");
     background-size: 2560px 900px;
     background-repeat: no-repeat;
@@ -38,13 +38,35 @@
     }
   }
 }
-.box-section{
-  @apply flex justify-between items-center;
-  .box{
-    @apply w-1/2;
-    img{
-      height: 350px;
-      @apply w-auto;
+
+.box-section {
+  @apply flex justify-between items-center flex-wrap;
+  .box {
+    height: 550px;
+    @apply w-1/2 p-10 flex flex-col justify-start items-center;
+    h2 {
+      @apply font-medium text-4xl text-white mb-2;
     }
+    p,h5{
+      @apply text-xl text-center w-3/4;
+    }
+
+    img {
+      height: 350px;
+      @apply w-auto mt-10 cursor-pointer;
+    }
+  }
+  .big-box{
+    @apply w-full border-b-8 border-r-8 border-l-8;
+    h2 {
+      @apply text-gray-700;
+    }
+  }
+
+  .right {
+    @apply border-b-8 border-r-8 border-l-4 border-white
+  }
+  .left {
+    @apply border-b-8 border-l-8 border-r-4 border-white
   }
 }
