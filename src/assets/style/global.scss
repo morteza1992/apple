@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #E1EAF2;
+}
+
 .nav {
   height: 50px;
   width: 100%;
@@ -43,11 +47,12 @@
   @apply flex justify-between items-center flex-wrap;
   .box {
     height: 550px;
-    @apply w-1/2 p-10 flex flex-col justify-start items-center;
+    @apply w-full lg:w-1/2 p-10 flex flex-col justify-start items-center;
     h2 {
       @apply font-medium text-4xl text-white mb-2;
     }
-    p,h5{
+
+    p, h5 {
       @apply text-xl text-center w-3/4;
     }
 
@@ -55,18 +60,33 @@
       height: 350px;
       @apply w-auto mt-10 cursor-pointer;
     }
+
+    .text-container {
+      @apply text-xl text-gray-800;
+    }
+
   }
-  .big-box{
-    @apply w-full border-b-8 border-r-8 border-l-8;
+
+  .big-box {
+    @apply w-full border-b-8 border-r-8 border-l-8 mb-10;
     h2 {
-      @apply text-gray-700;
+      @apply text-gray-700 text-5xl;
+    }
+
+    h5 {
+      @apply w-1/2
     }
   }
 
   .right {
-    @apply border-b-8 border-r-8 border-l-4 border-white
+    @apply border-0 lg:border-b-8 lg:border-r-8 lg:border-l-4 border-white
   }
+
   .left {
-    @apply border-b-8 border-l-8 border-r-4 border-white
+    @apply border-0 lg:border-b-8 lg:border-l-8 lg:border-r-4 border-white
+  }
+
+  .border-top {
+    @apply lg:border-t-8;
   }
 }
