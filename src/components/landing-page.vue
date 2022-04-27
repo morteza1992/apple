@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mobileMenu/>
+    <mobileMenu class="lg:hidden"/>
     <div class="nav flex justify-center items-center p-5">
       <ul class="w-8/12 flex justify-between items-center text-sm font-medium text-gray-700">
         <li><img style="width: 100px" src="../assets/images/apple-developer-brandmark.svg" alt=""></li>
