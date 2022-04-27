@@ -1,0 +1,176 @@
+
+$easing: cubic-bezier(0.4, 0, 0.2, 1);
+$timing-1: 200ms; // out
+$timing-2: 480ms; // in
+
+$menu-icon-theme: white;
+$overlay-menu-theme: black;
+
+[v-cloak] {
+  display: none;
+}
+
+// COMPONENTS
+
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  will-change: transform;
+  z-index: 99999999;
+  background-color: white;
+  overflow:hidden ;
+}
+
+.overlay-menu-content {
+  position: relative;
+}
+
+.overlay-menu-inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.overlay-menu-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: $overlay-menu-theme;
+
+}
+
+.menu-icon {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border-color: transparent;
+  background-color: transparent;
+  outline: none;
+  z-index: 999999999;
+  transition: background-color $timing-1 $easing;
+  transform: rotate(180deg);
+
+  span {
+    &,
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      margin-right: -13px;
+      margin-top: -1px;
+      width: 26px;
+      height: 2px;
+      background-color: $menu-icon-theme;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      transition: all $timing-1 $easing;
+    }
+
+    &::before {
+      transform: translateY(-7px);
+    }
+
+    &::after {
+      transform: translateY(7px);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba($menu-icon-theme, .15);
+  }
+
+  &:active {
+    background-color: rgba($menu-icon-theme, .3);
+  }
+
+  &.menu-icon-active {
+    span {
+      height: 0;
+
+      &::before,
+      &::after {
+        width: 26px;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+// VUE.JS TRANSITIONS
+
+.v-ripple-in-enter-active {
+  animation: ripple-in $timing-2 $easing;
+}
+
+.v-ripple-in-leave-active {
+  animation: ripple-in $timing-1 $easing reverse;
+}
+
+@keyframes ripple-in {
+  0% {
+    transform: scale(0);
+    opacity: .2;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1030;
+}
+
+.header-inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.list {
+  color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5rem;
+  opacity: 0;
+  transform: translateX(40px);
+  transition-property: opacity, transform;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+
+  .overlay-menu-active & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.main {
+  height: 1000px;
+}
