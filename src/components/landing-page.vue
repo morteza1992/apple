@@ -2,7 +2,7 @@
   <div>
     <div class="nav flex justify-center items-center p-5">
       <ul class="w-8/12 flex justify-between items-center text-sm font-medium text-gray-700">
-        <li></li>
+        <li><img style="width: 100px" src="../assets/images/apple-developer-brandmark.svg" alt=""></li>
         <li>News</li>
         <li>Discover</li>
         <li>Design</li>
@@ -10,7 +10,7 @@
         <li>Distribute</li>
         <li>Support</li>
         <li>Account</li>
-        <li></li>
+        <li><img style="height: 50px" src="../assets/images/search.svg" alt=""></li>
       </ul>
     </div>
     <div class="main-image">
@@ -91,12 +91,21 @@
         <h5 class="text-container">Think big. Think&nbsp;together.</h5>
         <img src="../assets/images/ipados-15-large.png" alt="">
       </div>
-      <div class="box big-box">
+      <div class="box big-box build-apps">
         <h2>Build apps. Build your future.</h2>
-        <h5 class="subhead">Whether you’re just entering the workforce or you‘re an experienced developer or entrepreneur, take advantage of free resources to gain skills that help you succeed in Apple’s growing app&nbsp;economy, which provides millions of jobs in technology across the globe.</h5>
-        <img src="../assets/images/xcode-13-large.png" alt="">
+        <h5 class="subhead">Whether you’re just entering the workforce or you‘re an experienced developer or
+          entrepreneur, take advantage of free resources to gain skills that help you succeed in Apple’s growing app&nbsp;economy,
+          which provides millions of jobs in technology across the globe.</h5>
+        <img style="transform: scale(1.4)" src="../assets/images/build-apps_2x.png" alt="">
       </div>
-
+      <div class=" members">
+        <img style="transform: scale(0.3)" src="../assets/images/members.svg" alt="">
+        <h2>Apple Developer Program</h2>
+        <h5 class="subhead">Join the <span class="nowrap">Apple Developer</span> Program to reach customers around the
+          world on the <span class="nowrap">App Store</span> for iPhone, iPad, Mac, <span
+              class="nowrap">Apple Watch,</span> <span class="nowrap">Apple TV,</span> and iMessage. You’ll also get
+          access to beta software, advanced app capabilities, extensive beta testing tools, and app&nbsp;analytics.</h5>
+      </div>
 
     </div>
   </div>
